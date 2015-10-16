@@ -25,6 +25,11 @@ gulp.task('css', function () {
 // nodemon task
 // runs and refreshes node server
 gulp.task('nodemon', function (cb) {
+	nodemon({
+	    script: 'server.js'
+	  , ext: 'js html'
+	  , env: { 'NODE_ENV': 'development' }
+  	})
 
 });
 
@@ -39,6 +44,6 @@ gulp.task('watch', function () {
 });
 
 // Default Task
-gulp.task('default', [
+gulp.task('default', ['nodemon'
 
 ]);
