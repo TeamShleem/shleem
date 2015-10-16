@@ -18,7 +18,7 @@ var config = {
 	// port: 9005,
 	// devBaseUrl: 'http://localhost',
 	paths: {
-		html: './index.html',
+		html: './public/index.html',
 		js: './public/js/**/*.js',
 		sass: './public/sass/**/*.{sass,scss}',
 		dist: './dist',
@@ -59,14 +59,14 @@ gulp.task('css', function () {
     }));
 });
 
-// // html
-// gulp.task('html', function (){
-//   return gulp.src(config.paths.html)
-//     .pipe(gulp.dest(config.paths.dist))
-// 		.pipe(browserSync.reload({
-//       stream: true
-//     }));
-// });
+// html
+gulp.task('html', function (){
+  return gulp.src(config.paths.html)
+    .pipe(gulp.dest(config.paths.dist))
+		.pipe(browserSync.reload({
+      stream: true
+    }));
+});
 
 // nodemon task
 // runs and refreshes node server
@@ -108,7 +108,7 @@ gulp.task('watch', function () {
 gulp.task('default', [
   'js',
   'css',
-  // 'html',
+  'html',
   'browser-sync',
   'watch'
 
