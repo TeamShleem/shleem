@@ -78,7 +78,10 @@ console.log("facebookLogin.js");
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI() {
 
-    User.findOne({'fb_id'}, function(err, user){
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+
+      User.findOne({'fb_id'}, function(err, user){
       if ( err ) throw err;
       if (user) {
         //After login, give them the feed (feed me)
@@ -91,10 +94,10 @@ console.log("facebookLogin.js");
       }
 
     });
-    console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
-      console.log('Successful login for: ' + response.name);
+
+
+      console.log('Successful login for: ' + response.id);
       document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
+        'Thanks for logging in, ' + response.id + '!';
     });
   }
