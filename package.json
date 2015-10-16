@@ -4,7 +4,9 @@
   "description": "app for music sharing",
   "main": "app.js",
   "dependencies": {
+    "body-parser": "^1.14.1",
     "express": "^4.13.3",
+    "method-override": "^2.3.5",
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
     "react-router": "^1.0.0-rc2"

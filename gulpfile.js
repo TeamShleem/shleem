@@ -18,7 +18,7 @@ var config = {
 	// port: 9005,
 	// devBaseUrl: 'http://localhost',
 	paths: {
-		html: './public/index.html',
+		html: './index.html',
 		js: './public/js/**/*.js',
 		sass: './public/sass/**/*.{sass,scss}',
 		dist: './dist',
@@ -40,7 +40,9 @@ gulp.task('js', function() {
 		.on('error', console.error.bind(console))
 		.pipe(source('bundle.js'))
 		.pipe(gulp.dest(config.paths.dist + '/js'))
-		;
+		.pipe(browserSync.reload({
+      stream: true
+    }));
 });
 
 // css task
@@ -51,40 +53,29 @@ gulp.task('css', function () {
     .pipe(prefix(['last 2 versions', 'ie 9'], {
       cascade: true
     }))
-    .pipe(gulp.dest(config.paths.dist + '/css'));
+    .pipe(gulp.dest(config.paths.dist + '/css'))
+		.pipe(browserSync.reload({
+      stream: true
+    }));
 });
 
-// html
-gulp.task('html', function (){
-  return gulp.src(config.paths.html)
-    .pipe(gulp.dest(config.paths.dist));
-});
+// // html
+// gulp.task('html', function (){
+//   return gulp.src(config.paths.html)
+//     .pipe(gulp.dest(config.paths.dist))
+// 		.pipe(browserSync.reload({
+//       stream: true
+//     }));
+// });
 
 // nodemon task
 // runs and refreshes node server
-gulp.task('nodemon', function (cb) {
-  // We use this `called` variable to make sure the callback is only executed once
-  var called = false;
+gulp.task('nodemon', function () {
   return nodemon({
-      script: 'server.js',
-      watch: ['server.js']
-      // watch: ['server.js', 'app/**/*.*']
-    })
-    .on('start', function onStart() {
-      if (!called) {
-        cb();
-      }
-      called = true;
-    })
-    .on('restart', function onRestart() {
-
-      // Also reload the browsers after a slight delay
-      setTimeout(function reload() {
-        browserSync.reload({
-          stream: true
-        });
-      }, 1000);
-    });
+    script: 'server.js',
+    ext: 'js html',
+    env: { 'NODE_ENV': 'development' }
+  });
 });
 
 // browserSync task
@@ -117,7 +108,7 @@ gulp.task('watch', function () {
 gulp.task('default', [
   'js',
   'css',
-  'html',
+  // 'html',
   'browser-sync',
   'watch'
 
