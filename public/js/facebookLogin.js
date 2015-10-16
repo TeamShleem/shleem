@@ -1,3 +1,10 @@
+var mongoose = require('mongoose'),
+  Schema = mongoose.Schema,
+  User = require('../../app/models/User'); 
+var connect = mongoose.connect(require('../../config/db'));
+
+var db = mongoose.connection;
+
 console.log("facebookLogin.js");
 // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
@@ -70,6 +77,20 @@ console.log("facebookLogin.js");
   // Here we run a very simple test of the Graph API after login is
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI() {
+
+    User.findOne({'fb_id'}, function(err, user){
+      if ( err ) throw err;
+      if (user) {
+        //After login, give them the feed (feed me)
+      }
+      else{
+        User.save(function(err, data){
+          if(err) console.log(err);
+          else console.log('[SAVED] ', data.text)
+        });
+      }
+
+    });
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
