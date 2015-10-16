@@ -6,7 +6,8 @@
   "dependencies": {
     "express": "^4.13.3",
     "react": "^0.14.0",
-    "react-dom": "^0.14.0"
+    "react-dom": "^0.14.0",
+    "react-router": "^1.0.0-rc2"
   },
   "devDependencies": {
     "babelify": "^6.3.0",
