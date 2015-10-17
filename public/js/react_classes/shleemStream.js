@@ -3,6 +3,8 @@ var ReactDOM = require('react-dom');
 
 var data = require('../../../data/shleems.js');
 
+data.push({name: 'poop', text: 'extra poop', media: 'poop song'});
+
 var Shleem = React.createClass({
   	render: function() {
 	    return (
@@ -31,4 +33,36 @@ var ShleemStream = React.createClass({
     }
 });
 
-ReactDOM.render(React.createElement(ShleemStream), document.body);
+var PostButton = React.createClass({
+    render: function() {
+        return (
+        	<div className="postButton">
+				<button onClick={this.myFunction}>CLICK ME</button>
+			</div>
+      	);
+    },
+    myFunction: function() {
+    	data.unshift({name: 'poop', text: 'extra poop', media: 'poop song'});
+    	ReactDOM.render(React.createElement(Page), document.body);
+    }
+});
+
+var Page = React.createClass({
+  	render: function() {
+	    return (
+	    	<div className="page">
+	    		<h1>WELCOME TO SHLEEM</h1>
+	       		<ShleemStream />
+	       		<PostButton />
+	      	</div>
+	    );
+ 	}
+});
+
+
+ReactDOM.render(React.createElement(Page), document.body);
+
+
+
+
+
