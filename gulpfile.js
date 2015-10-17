@@ -22,7 +22,7 @@ var config = {
 		js: './public/js/**/*.{js,jsx}',
 		sass: './public/sass/**/*.{sass,scss}',
 		dist: './dist',
-		mainJs: './public/js/main.jsx',
+		mainJs: './public/js/main.js',
     mainSass: './public/sass/main.sass'
 	},
   onError: function(error) {
