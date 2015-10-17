@@ -13,7 +13,7 @@ var Shleem = React.createClass({
                         <h3>{this.props.shleem.name}</h3>
                         <h3>{this.props.shleem.text}</h3>
                         <h3>Likes: {this.props.shleem.likes}</h3>
-                                <button onClick={this.myFunction}>CLICK ME TO LIKE</button>
+                                <button onClick={this.myFunction}>Like ♫</button>
                 </div>
             );
         },
@@ -30,7 +30,7 @@ var ShleemStream = React.createClass({
                         return (
                                 <div>
                                 <Shleem shleem={shleem}></Shleem>
-                                <h2>---------------------------------------</h2>
+                                <h2>-------------------------------------------</h2>
                             </div>
                 );
                 });
@@ -46,7 +46,7 @@ var PostButton = React.createClass({
     render: function() {
         return (
                 <div className="postButton">
-                                <button onClick={this.myFunction}>CLICK ME</button>
+                                <button onClick={this.myFunction}>Feed</button>
                         </div>
         );
     },
@@ -60,9 +60,9 @@ var Page = React.createClass({
         render: function() {
             return (
                 <div className="page">
-                        <h1>WELCOME TO SHLEEM</h1>
-                        <ShleemStream />
+                        <h1>♪ Shleem ♪</h1>
                         <PostButton />
+                        <ShleemStream />
                 </div>
             );
         }
