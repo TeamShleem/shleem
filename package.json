@@ -6,6 +6,7 @@
   "dependencies": {
     "body-parser": "^1.14.1",
     "express": "^4.13.3",
+    "material-design-lite": "^1.0.5",
     "method-override": "^2.3.5",
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
