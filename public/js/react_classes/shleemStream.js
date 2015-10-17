@@ -19,10 +19,6 @@ var Shleem = React.createClass({
 
 var ShleemStream = React.createClass({
     render: function() {
-  //   	var data = [
-		//   {name: "Rick", text: "You are suppose to turn the boots on."},
-		//   {name: "Morty", text: ":("}
-		// ];
         return (
       		<div className="shleemStream">
       			<h1>I am the shleemStream!</h1>
