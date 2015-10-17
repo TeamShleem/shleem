@@ -9,7 +9,7 @@
 // ];
 var data = require('../../../data/shleems.js');
 
-data.push({name: 'poop', text: 'extra poop', media: 'poop song'});
+//data.push({id:name: 'poop', text: 'extra poop', media: 'poop song'});
 
 var Shleem = React.createClass({
   	render: function() {
@@ -29,9 +29,15 @@ var Shleem = React.createClass({
 	        	<h3>Name: {this.props.shleem.name}</h3>
 	        	<h3>Text: {this.props.shleem.text}</h3>
 	        	<h3>Media: {this.props.shleem.media}</h3>
-	        	<h2>--------------------------------------------------------------------</h2>
+	        	<h3>Likes: {this.props.shleem.likes}</h3>
+				<button onClick={this.myFunction}>CLICK ME TO LIKE</button>
 	      	</div>
 	    );
+ 	},
+ 	myFunction: function() {
+ 		console.log('liked');
+ 		this.props.shleem.likes++;
+ 		ReactDOM.render(React.createElement(Page), document.body);
  	}
 });
 
@@ -39,7 +45,10 @@ var ShleemStream = React.createClass({
     render: function() {
     	var shleemNodes = data.map(function (shleem) {
 			return (
-		        <Shleem shleem={shleem}></Shleem>
+				<div>
+			        <Shleem shleem={shleem}></Shleem>
+			       	<h2>--------------------------------------------------------------------</h2>
+			    </div>
       		);
   		});
         return (
@@ -76,5 +85,18 @@ var Page = React.createClass({
  	}
 });
 
+var LikeButton = React.createClass({
+    render: function() {
+        return (
+        	<div className="likeButton">
+				<button onClick={this.myFunction}>CLICK ME TO LIKE</button>
+			</div>
+      	);
+    },
+    myFunction: function() {
+
+    	
+    }
+});
 
 ReactDOM.render(React.createElement(Page), document.body);
