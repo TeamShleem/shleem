@@ -1,15 +1,15 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Card = require('material-ui/lib/card');
-var CardHeader = require('material-ui/lib/card/card-header');
-var CardMedia = require('material-ui/lib/card/card-media');
-var CardTitle = require('material-ui/lib/card/card-title');
-var CardActions = require('material-ui/lib/card/card-actions');
-var CardText = require('material-ui/lib/card/card-text');
-var FlatButton = require('material-ui/lib/flat-button');
-var Avatar = require('material-ui/lib/avatar');
-var injectTapEventPlugin = require("react-tap-event-plugin");
-injectTapEventPlugin();
+// var Card = require('material-ui/lib/card');
+// var CardHeader = require('material-ui/lib/card/card-header');
+// var CardMedia = require('material-ui/lib/card/card-media');
+// var CardTitle = require('material-ui/lib/card/card-title');
+// var CardActions = require('material-ui/lib/card/card-actions');
+// var CardText = require('material-ui/lib/card/card-text');
+// var FlatButton = require('material-ui/lib/flat-button');
+// var Avatar = require('material-ui/lib/avatar');
+// var injectTapEventPlugin = require("react-tap-event-plugin");
+// injectTapEventPlugin();
 
 var data = require('../../data/shleems.js');
 
@@ -19,11 +19,11 @@ var Shleem = React.createClass({
   	render: function() {
 	    return (
 	    	<div className="shleem">
-	        	<h3>Name: {this.props.shleem.name}</h3>
-	        	<h3>Text: {this.props.shleem.text}</h3>
-	        	<h3>Media: {this.props.shleem.media}</h3>
-	        	<h3>Likes: {this.props.shleem.likes}</h3>
-				<button onClick={this.myFunction}>CLICK ME TO LIKE</button>
+        	<h3>Media: <a href="{this.props.shleem.media}">Click Me!</a></h3>
+        	<h3>Name: {this.props.shleem.name}</h3>
+        	<h3>Text: {this.props.shleem.text}</h3>
+				  <button onClick={this.myFunction}>CLICK ME TO LIKE</button>
+        	<span>Likes: {this.props.shleem.likes}</span>
 	      	</div>
 	    );
  	},
@@ -40,7 +40,7 @@ var ShleemStream = React.createClass({
 			return (
 				<div>
 			        <Shleem shleem={shleem}></Shleem>
-			       	<h2>--------------------------------------------------------------------</h2>
+			       	<h2>-----------------------------------------------</h2>
 			    </div>
       		);
   		});
@@ -70,7 +70,7 @@ var Page = React.createClass({
   	render: function() {
 	    return (
 	    	<div className="page">
-	    		<h1>WELCOME TO SHLEEM</h1>
+	    		<h1>SHLEEM</h1>
 	       		<ShleemStream />
 	       		<PostButton />
 	      	</div>
@@ -88,7 +88,7 @@ var LikeButton = React.createClass({
     },
     myFunction: function() {
 
-    	
+
     }
 });
 
