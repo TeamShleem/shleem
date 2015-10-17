@@ -7,7 +7,6 @@ var data = require('../../../data/shleems.js');
 
 var Shleem = React.createClass({
         render: function() {
-            this.props.shleem.text = '"' + this.props.shleem.text + '"';
             return (
                 <div className="shleem">
                         <Sound url={this.props.shleem.media} />
