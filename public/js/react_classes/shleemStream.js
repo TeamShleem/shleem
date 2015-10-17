@@ -59,7 +59,7 @@ var Page = React.createClass({
         render: function() {
             return (
                 <div className="page">
-                        <h1>♪ Shleem ♪</h1>
+                 
                         <PostButton />
                         <ShleemStream />
                 </div>
