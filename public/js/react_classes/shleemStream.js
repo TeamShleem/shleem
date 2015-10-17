@@ -7,13 +7,19 @@ var data = require('../../../data/shleems.js');
 
 var Shleem = React.createClass({
         render: function() {
+            this.props.shleem.text = '"' + this.props.shleem.text + '"';
             return (
                 <div className="shleem">
                         <Sound url={this.props.shleem.media} />
                         <h3>{this.props.shleem.name}</h3>
-                        <h3>{this.props.shleem.text}</h3>
-                        <h3>Likes: {this.props.shleem.likes}</h3>
-                                <button onClick={this.myFunction}>Like ♫</button>
+                        <i><div className="text">{this.props.shleem.text}</div></i>
+                        <div className="likeCount">
+                            <h5>Likes: {this.props.shleem.likes}</h5>
+                        </div>
+                        <div className="likes">
+                            <button onClick={this.myFunction}>Like ♫</button>
+                        </div>
+                                
                 </div>
             );
         },
