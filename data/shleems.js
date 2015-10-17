@@ -1,6 +1,6 @@
 var schleems = [
 	
-{'name': 'Alvin Z', 'text': 'Check out this sweet song.', 'media': 'https://soundcloud.com/rafriley/50-cent-raf-riley-preview', '': 's'},
+{'name': 'Alvin Z', 'text': 'Check out this sweet jam yo.', 'media': 'https://soundcloud.com/rafriley/50-cent-raf-riley-preview', '': 's'},
 {'name': 'Andrew M', 'text': 'Check out this drop.', 'media': 'https://soundcloud.com/happy_trails/sets/shleems', 'type': 's'},
 {'name': 'Himanshu T', 'text': 'Holy Sh**.', 'media': 'https://soundcloud.com/bukezfinezt/bukez-finezt-luigis-lowrider-free-download', 'type': 's'},
 {'name': 'Anthony M', 'text': 'Woah.', 'media': 'https://soundcloud.com/outtallectuals/deep-sea-creatures-01-refraq-ascend-descend', 'type': 's'},
