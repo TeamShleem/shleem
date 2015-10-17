@@ -30,7 +30,6 @@ var ShleemStream = React.createClass({
                         return (
                                 <div>
                                 <Shleem shleem={shleem}></Shleem>
-                                <h2>-------------------------------------------</h2>
                             </div>
                 );
                 });
