@@ -1,11 +1,12 @@
 var mongoose = require('mongoose');
   Schema = mongoose.Schema;
 
-  car userSchema = Schema({
+  var userSchema = Schema({
   	fb_id: String,
   	following: [String],
-  	shleems: []
-
+  	shleems: [],
   });
 
-  module.exports = mongoose.model('User', userSchema);
+var mod = mongoose.model('User', userSchema);
+
+module.exports = mod//mongoose.model('User', userSchema);

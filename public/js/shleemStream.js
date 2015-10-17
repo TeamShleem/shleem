@@ -11,4 +11,4 @@ var ShleemStream = React.createClass({
     }
 });
 
-ReactDOM.render(React.createElement(ShleemStream), document.body);
+//ReactDOM.render(React.createElement(ShleemStream), document.body);
