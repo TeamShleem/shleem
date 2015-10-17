@@ -19,10 +19,10 @@ var config = {
 	// devBaseUrl: 'http://localhost',
 	paths: {
 		html: './public/index.html',
-		js: './public/js/**/*.js',
+		js: './public/js/**/*.{js,jsx}',
 		sass: './public/sass/**/*.{sass,scss}',
 		dist: './dist',
-		mainJs: './public/js/main.js',
+		mainJs: './public/js/main.jsx',
     mainSass: './public/sass/main.sass'
 	},
   onError: function(error) {
