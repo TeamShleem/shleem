@@ -1,8 +1,7 @@
 var mongoose = require('mongoose'),
   Schema = mongoose.Schema,
-  User = require('../../app/models/User'); 
+  User = require('../../models/User'); 
 var connect = mongoose.connect(require('../../config/db'));
-
 var db = mongoose.connection;
 
 console.log("facebookLogin.js");
@@ -81,7 +80,7 @@ console.log("facebookLogin.js");
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
 
-      User.findOne({'fb_id'}, function(err, user){
+      User.findOne({'fb_id': response.id}, function(err, user){
       if ( err ) throw err;
       if (user) {
         //After login, give them the feed (feed me)
@@ -96,8 +95,8 @@ console.log("facebookLogin.js");
     });
 
 
-      console.log('Successful login for: ' + response.id);
-      document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.id + '!';
+      // console.log('Successful login for: ' + response.id);
+      // document.getElementById('status').innerHTML =
+      //   'Thanks for logging in, ' + response.id + '!';
     });
   }
